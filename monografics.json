@@ -1,0 +1,95 @@
+{
+  "_nota": "Edicions monogràfiques del portal. Per afegir-ne una, afegiu un objecte a 'edicions' (l'ordre no importa: la pàgina les ordena per 'data', de més recent a més antiga) i deseu la imatge a img/monografics/ amb el nom indicat a 'imatge'.",
+  "edicions": [
+    {
+      "data": "2026-07",
+      "data_text": "Juliol de 2026",
+      "titol": "El fenomen migratori del Marroc",
+      "etiqueta": "Migracions",
+      "url": "https://estat-del-mon.onrender.com/especials/migraciomarroc.html",
+      "imatge": "img/monografics/migraciomarroc.jpg",
+      "alt": "Tanca fronterera entre Ceuta i el Marroc",
+      "credit": {
+        "autor": "Xemenendura",
+        "llicencia": "CC BY-SA 3.0",
+        "llicencia_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "font_url": "https://commons.wikimedia.org/wiki/File:Valla_de_Ceuta.jpg"
+      }
+    },
+    {
+      "data": "2026-06",
+      "data_text": "Juny de 2026",
+      "titol": "La Xina davant dels seus propis diagnòstics",
+      "etiqueta": "Àsia",
+      "url": "https://estat-del-mon.onrender.com/especials/edicio_monografica_xina_1.html",
+      "imatge": "img/monografics/edicio_monografica_xina_1.jpg",
+      "alt": "Gratacels de Pudong, a Xangai, de nit",
+      "credit": {
+        "autor": "David Zhang",
+        "llicencia": "CC BY-SA 2.0",
+        "llicencia_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "font_url": "https://commons.wikimedia.org/wiki/File:Pudong_night_skyline_viewed_from_the_Bund_in_Shanghai_(41199899084).jpg"
+      }
+    },
+    {
+      "data": "2026-05-21",
+      "data_text": "21 de maig de 2026",
+      "titol": "L'envelliment a Europa",
+      "etiqueta": "Demografia",
+      "url": "https://estat-del-mon.onrender.com/especials/envellimenteuropa.html",
+      "imatge": "img/monografics/envellimenteuropa.jpg",
+      "alt": "Dos homes grans asseguts en un banc",
+      "credit": {
+        "autor": "Ernst Vikne",
+        "llicencia": "CC BY-SA 2.0",
+        "llicencia_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "font_url": "https://commons.wikimedia.org/wiki/File:Two_old_men_sitting_on_a_bench_(365432689).jpg"
+      }
+    },
+    {
+      "data": "2026-04-27",
+      "data_text": "27 d'abril de 2026",
+      "titol": "Defensa i seguretat",
+      "etiqueta": "Seguretat",
+      "url": "https://estat-del-mon.onrender.com/especials/defensa2026",
+      "imatge": "img/monografics/defensa2026.jpg",
+      "alt": "Tanc Leopard 2A5 de l'exèrcit neerlandès en unes maniobres",
+      "credit": {
+        "autor": "Directie Voorlichting, Ministerie van Defensie (NL)",
+        "llicencia": "CC BY-SA 4.0",
+        "llicencia_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "font_url": "https://commons.wikimedia.org/wiki/File:Een_Leopard_2A5_tank_van_42_Tankbataljon_neemt_positie_in_en_houdt_de_loop_richting_de_vijand.jpg"
+      }
+    },
+    {
+      "data": "2026-04-06",
+      "data_text": "6 d'abril de 2026",
+      "titol": "Informació, plataformes i democràcia",
+      "etiqueta": "Democràcia",
+      "url": "https://estat-del-mon.onrender.com/especials/democracia.html",
+      "imatge": "img/monografics/democracia.jpg",
+      "alt": "Hemicicle del Parlament Europeu a Estrasburg durant una sessió plenària",
+      "credit": {
+        "autor": "Diliff",
+        "llicencia": "CC BY-SA 3.0",
+        "llicencia_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "font_url": "https://commons.wikimedia.org/wiki/File:European_Parliament_Strasbourg_Hemicycle_-_Diliff.jpg"
+      }
+    },
+    {
+      "data": "2026-03-26",
+      "data_text": "26 de març de 2026",
+      "titol": "Intel·ligència Artificial: la tecnologia que reorganitza tot",
+      "etiqueta": "Tecnologia",
+      "url": "https://estat-del-mon.onrender.com/especials/ia.html",
+      "imatge": "img/monografics/ia.jpg",
+      "alt": "Racks de servidors al centre de dades del CERN",
+      "credit": {
+        "autor": "Hugovanmeijeren",
+        "llicencia": "CC BY-SA 3.0",
+        "llicencia_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "font_url": "https://commons.wikimedia.org/wiki/File:Cern_datacenter.jpg"
+      }
+    }
+  ]
+}

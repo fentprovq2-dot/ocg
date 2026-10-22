@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Observatori Català de Geopolítica</title>
+<meta name="description" content="Geopolítica, economia i política social amb dades, en català: el butlletí Estat del Món, edicions monogràfiques, l'Atles de conflictes armats i l'EUcografia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B1220; --ink-2:#101A2C; --ink-3:#0E1626; --line:#24304A; --line-2:#3A4866;
+  --text:#E8ECF3; --text-2:#C8D0DE; --muted:#B4BED0; --dim:#9AA6BC;
+  --paper:#F3F1EC; --paper-line:#D6D1C4; --paper-text:#3F4A5E; --paper-accent:#A63E10;
+  --accent:#FF7A3D; --blue:#5AB0FF; --down:#FF9A66; --mixed:#C9A7FF; --soft:#FFB38A;
+  --display:'Space Grotesk',system-ui,sans-serif; --body:Inter,system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  --wrap:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--text)}a:hover{color:var(--accent)}
+img{max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:24px;padding-right:24px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0}
+.h2{margin:0;font-family:var(--display);font-weight:600;font-size:clamp(30px,3.8vw,48px);line-height:1.05;letter-spacing:-.03em}
+.lede{margin:0;font-size:16px;line-height:1.6;color:var(--muted)}
+.btn{display:inline-block;padding:14px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none}
+.btn-accent{background:var(--accent);color:var(--ink)}.btn-accent:hover{color:var(--ink);filter:brightness(1.08)}
+.btn-light{background:var(--text);color:var(--ink)}.btn-light:hover{color:var(--ink);background:#fff}
+.btn-ghost{border:1px solid var(--line-2);color:var(--text);font-weight:500}
+.btn-dark{background:var(--ink);color:var(--paper)}.btn-dark:hover{color:var(--accent)}
+.mono{font-family:var(--mono)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.pulse{animation:none!important;opacity:0}}
+
+/* capçalera */
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand b{display:block;font-family:var(--display);font-size:17px;letter-spacing:-.01em}
+.brand small{display:block;font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+.nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.nav a{padding:12px 14px;font-size:14px;text-decoration:none;color:var(--text-2)}
+.nav a.cta{margin-left:8px;padding:12px 18px;font-weight:600;color:var(--ink);background:var(--accent);border-radius:999px}
+
+/* portada */
+.hero{display:flex;flex-wrap:wrap;gap:48px;align-items:center;padding-top:72px;padding-bottom:56px}
+.hero-txt{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:28px}
+.hero h1{margin:0;font-family:var(--display);font-weight:600;font-size:clamp(40px,6vw,76px);line-height:.98;letter-spacing:-.035em}
+.hero p{margin:0;max-width:580px;font-size:18px;line-height:1.6;color:var(--muted)}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px}
+.hero-side{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.globe{width:100%;max-width:440px;height:auto;align-self:center}
+@keyframes pulse{0%{r:4;opacity:.9}70%{r:16;opacity:0}100%{r:16;opacity:0}}
+.pulse{animation:pulse 2.4s ease-out infinite}.d2{animation-delay:.6s}.d3{animation-delay:1.2s}.d4{animation-delay:1.8s}
+.figure{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:var(--ink-2);display:flex;flex-direction:column;gap:6px}
+.figure .n{font-family:var(--display);font-size:40px;font-weight:600;letter-spacing:-.02em;color:var(--accent)}
+.figure .t{font-size:14px;line-height:1.5;color:var(--muted)}
+
+/* productes */
+.products{padding-top:24px;padding-bottom:80px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:24px}
+.prod{text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:28px;background:var(--ink-2);display:flex;flex-direction:column;gap:14px;min-height:260px;transition:border-color .2s}
+.prod:hover{border-color:var(--accent);color:var(--text)}
+.prod .k{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.prod .h{font-family:var(--display);font-size:28px;font-weight:600;letter-spacing:-.02em}
+.prod .d{font-size:15px;line-height:1.55;color:var(--muted);flex-grow:1}
+.prod .go{font-size:14px;font-weight:600}
+
+/* butlletí */
+.paper{background:var(--paper);color:var(--ink)}
+.paper a{color:var(--ink)}
+.paper .kicker{color:var(--paper-accent)}
+.paper .lede,.paper p{color:var(--paper-text)}
+.bulletin{display:flex;flex-direction:column;gap:40px;padding-top:88px;padding-bottom:88px}
+.row-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px}
+.row-head > div{display:flex;flex-direction:column;gap:14px;max-width:760px}
+.tabs-wrap{display:flex;flex-wrap:wrap;gap:24px;align-items:stretch}
+.tabs{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.tab{display:flex;align-items:baseline;gap:14px;text-align:left;padding:14px 18px;min-height:52px;border-radius:14px;border:1px solid var(--paper-line);background:transparent;color:var(--ink);cursor:pointer;font:inherit}
+.tab:hover{border-color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tab .n{font-family:var(--mono);font-size:13px;opacity:.8}
+.tab .t{display:block;font-family:var(--display);font-weight:600;font-size:17px}
+.tab .a{display:block;font-size:13px;opacity:.8}
+.panel{flex:999 1 520px;min-width:0;border-radius:24px;background:var(--ink);color:var(--text);padding:40px;display:flex;flex-direction:column;gap:20px;min-height:380px}
+.panel .k{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.panel .s{font-family:var(--display);font-size:22px;font-weight:500;color:var(--dim)}
+.panel h3{margin:0;font-family:var(--display);font-weight:600;font-size:clamp(24px,2.8vw,36px);line-height:1.12;letter-spacing:-.02em}
+.panel p{margin:0;font-size:16px;line-height:1.6;color:var(--muted);flex-grow:1}
+.panel .foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding-top:20px}
+.panel .foot span{font-family:var(--mono);font-size:12px;color:var(--dim)}
+.panel a{color:var(--text);font-size:15px;font-weight:600}.panel a:hover{color:var(--accent)}
+.archive{display:flex;flex-wrap:wrap;align-items:center;gap:10px;border-top:1px solid var(--paper-line);padding-top:24px}
+.archive .lbl{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#4A5468;margin-right:8px}
+.chip{padding:10px 14px;border-radius:999px;border:1px solid #C9C3B4;font-size:14px;text-decoration:none}
+.archive .all{padding:10px 14px;font-size:14px;font-weight:600;color:var(--paper-accent)!important}
+
+/* monogràfics */
+.mono-sec{padding-top:96px;padding-bottom:96px;display:flex;flex-direction:column;gap:32px}
+.mono-sec .row-head p{max-width:420px}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:12px}
+.mcard{border-radius:16px;border:1px solid var(--line);background:var(--ink-2);overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s}
+.mcard:hover{border-color:var(--accent)}
+.mcard > a{text-decoration:none;color:var(--text);display:flex;flex-direction:column}
+.mcard img{display:block;width:100%;height:150px;object-fit:cover;filter:saturate(.85);background:var(--line)}
+.mcard .body{padding:18px 22px 10px;display:flex;flex-direction:column;gap:10px}
+.mcard .meta{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.mcard .date{font-family:var(--mono);font-size:12px;color:var(--dim)}
+.mcard .tag{font-family:var(--mono);font-size:12px;padding:4px 10px;border-radius:999px;background:#1B2740;color:var(--blue)}
+.mcard .title{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.mcard .title span{font-family:var(--display);font-size:21px;font-weight:600;line-height:1.2;letter-spacing:-.015em}
+.mcard .title i{font-style:normal;flex-shrink:0;font-size:20px;font-weight:600;color:var(--accent)}
+.mcard .credit{padding:0 22px 18px;font-family:var(--mono);font-size:11px;color:#8D99AF}
+.mcard .credit a{color:#8D99AF}.mcard .credit a:hover{color:var(--accent)}
+.notice{border:1px dashed var(--line-2);border-radius:16px;padding:20px;color:var(--muted);font-size:14px}
+
+/* atles */
+.atlas{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink-3)}
+.atlas .wrap{display:flex;flex-wrap:wrap;gap:48px;padding-top:96px;padding-bottom:96px}
+.atlas .col{flex:1 1 400px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.cat{border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.cat .h{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px}
+.cat .d{font-size:14px;line-height:1.5;color:var(--text-2)}
+.hot{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.hot div{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.hot b{font-family:var(--display);font-size:18px;font-weight:500}
+.hot span{font-size:13px;color:var(--dim);text-align:right}
+.regions{display:flex;flex-wrap:wrap;gap:8px}
+.regions a{padding:10px 14px;border-radius:999px;border:1px solid var(--line-2);font-size:14px;text-decoration:none}
+.small-label{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+
+/* eucografia */
+.euco{padding-top:96px;padding-bottom:96px;display:flex;flex-direction:column;gap:32px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-family:var(--mono);font-size:13px;color:var(--text-2)}
+.euco-body{display:flex;flex-wrap:wrap;gap:24px}
+.countries{flex:1 1 300px;min-width:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;align-content:start}
+.ctry{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:14px 16px;min-height:56px;border-radius:14px;border:1px solid var(--line);background:var(--ink-2);color:var(--text);cursor:pointer;font:inherit;text-align:left}
+.ctry:hover{border-color:var(--line-2)}
+.ctry[aria-pressed="true"]{background:#1B2740;border-color:var(--accent)}
+.ctry small{display:block;font-family:var(--mono);font-size:12px;color:var(--dim)}
+.ctry b{display:block;font-family:var(--display);font-size:16px}
+.ctry .ar{font-size:26px;font-weight:700}
+.card-c{flex:999 1 560px;min-width:0;border:1px solid var(--line);border-radius:24px;background:var(--ink-2);padding:36px;display:flex;flex-direction:column;gap:24px}
+.card-c .hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px}
+.card-c h3{margin:0;font-family:var(--display);font-size:36px;font-weight:600;letter-spacing:-.02em}
+.card-c .gov{font-family:var(--mono);font-size:13px;color:var(--dim)}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.dim{border-radius:16px;background:var(--ink);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:6px}
+.dim .l{font-size:13px;color:var(--dim)}
+.dim .a{font-size:34px;font-weight:700;line-height:1}
+.dim .s{font-family:var(--mono);font-size:14px;color:var(--text-2)}
+.card-c p{margin:0;font-size:17px;line-height:1.6;color:var(--text-2)}
+.card-c .foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:20px}
+.card-c .foot span{font-family:var(--mono);font-size:12px;color:var(--dim)}
+.card-c .foot a{font-size:15px;font-weight:600}
+
+/* mètode */
+.method{display:flex;flex-direction:column;gap:36px;padding-top:88px;padding-bottom:88px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.grid3 div{border-top:2px solid var(--ink);padding-top:20px;display:flex;flex-direction:column;gap:10px}
+.grid3 b{font-family:var(--display);font-size:21px}
+.grid3 span{font-size:15px;line-height:1.6;color:var(--paper-text)}
+
+/* subscripció i peu */
+.subs{padding-top:96px;padding-bottom:96px}
+.subs-box{border-radius:28px;border:1px solid #2A3753;background:var(--ink-2);padding:48px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:32px}
+.subs-box > div{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.subs-box form{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:8px}
+.subs-box label{font-size:14px;color:var(--text-2)}
+.subs-row{display:flex;flex-wrap:wrap;gap:10px}
+.subs-row input{flex:1 1 240px;min-width:0;min-height:50px;padding:0 18px;border-radius:999px;border:1px solid var(--line-2);background:var(--ink);color:var(--text);font:inherit;font-size:16px}
+.subs-row button{min-height:50px;padding:0 24px;border-radius:999px;border:0;background:var(--accent);color:var(--ink);font:inherit;font-weight:600;font-size:15px;cursor:pointer}
+footer{border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;padding-top:40px;padding-bottom:56px}
+footer .about{display:flex;flex-direction:column;gap:8px;max-width:360px}
+footer .about b{font-family:var(--display);font-size:17px}
+footer .about span{font-size:14px;line-height:1.6;color:var(--dim)}
+footer nav{display:flex;flex-wrap:wrap;gap:40px}
+footer nav div{display:flex;flex-direction:column;gap:10px}
+footer nav a{font-size:14px;text-decoration:none}
+@media (max-width:600px){.panel,.card-c,.subs-box{padding:24px}.prod{min-height:0}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inici">
+      <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="16" fill="none" stroke="#E8ECF3" stroke-width="1.5"/><ellipse cx="18" cy="18" rx="7" ry="16" fill="none" stroke="#E8ECF3" stroke-width="1.2"/><line x1="2" y1="18" x2="34" y2="18" stroke="#E8ECF3" stroke-width="1.2"/><circle cx="24" cy="12" r="3" fill="#FF7A3D"/></svg>
+      <span><b>Observatori Català de Geopolítica</b><small>OCG · dades i anàlisi</small></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#butlleti">Butlletí</a>
+      <a href="#monografics">Monogràfics</a>
+      <a href="#atles">Atles de conflictes</a>
+      <a href="#eucografia">EUcografia</a>
+      <a href="#metode">Mètode</a>
+      <a class="cta" href="#subscripcio">Subscriu-t'hi</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="inici" class="wrap hero">
+  <div class="hero-txt">
+    <p class="kicker">Geopolítica, economia i política social · en català</p>
+    <h1>Llegir el món amb dades, des de Catalunya.</h1>
+    <p>Un butlletí setmanal, edicions monogràfiques, un atles dels conflictes armats i una radiografia trimestral de països europeus. Quatre eines amb un mateix compromís: fonts oficials, metodologia publicada i judicis que el lector pot discutir.</p>
+    <div class="hero-btns">
+      <a class="btn btn-light" href="https://estat-del-mon.onrender.com/">Llegir l'edició d'aquesta setmana</a>
+      <a class="btn btn-ghost" href="https://conflictes.onrender.com/">Obrir l'atles de conflictes</a>
+    </div>
+  </div>
+  <div class="hero-side">
+    <svg class="globe" viewBox="0 0 440 440" aria-hidden="true">
+      <circle cx="220" cy="220" r="200" fill="#101A2C" stroke="#2A3753"/>
+      <ellipse cx="220" cy="220" rx="150" ry="200" fill="none" stroke="#24304A"/>
+      <ellipse cx="220" cy="220" rx="95" ry="200" fill="none" stroke="#24304A"/>
+      <ellipse cx="220" cy="220" rx="40" ry="200" fill="none" stroke="#24304A"/>
+      <ellipse cx="220" cy="220" rx="200" ry="60" fill="none" stroke="#24304A"/>
+      <ellipse cx="220" cy="220" rx="200" ry="125" fill="none" stroke="#24304A"/>
+      <line x1="20" y1="220" x2="420" y2="220" stroke="#2F3D5C"/>
+      <line x1="220" y1="20" x2="220" y2="420" stroke="#2F3D5C"/>
+      <circle cx="214" cy="126" r="4" fill="#5AB0FF"/>
+      <circle cx="262" cy="118" r="4" fill="#FF7A3D"/><circle cx="262" cy="118" r="4" fill="none" stroke="#FF7A3D" stroke-width="2" class="pulse"/>
+      <circle cx="292" cy="222" r="4" fill="#FF7A3D"/><circle cx="292" cy="222" r="4" fill="none" stroke="#FF7A3D" stroke-width="2" class="pulse d2"/>
+      <circle cx="276" cy="244" r="4" fill="#FF7A3D"/><circle cx="276" cy="244" r="4" fill="none" stroke="#FF7A3D" stroke-width="2" class="pulse d3"/>
+      <circle cx="252" cy="226" r="4" fill="#FF7A3D"/>
+      <circle cx="300" cy="262" r="4" fill="#FF7A3D"/><circle cx="300" cy="262" r="4" fill="none" stroke="#FF7A3D" stroke-width="2" class="pulse d4"/>
+      <circle cx="186" cy="214" r="3" fill="#FFB38A"/><circle cx="160" cy="222" r="3" fill="#FFB38A"/><circle cx="330" cy="168" r="3" fill="#FFB38A"/>
+    </svg>
+    <div class="figure">
+      <span class="small-label" id="xifra-data">La xifra de la setmana</span>
+      <span class="n" id="xifra-n"></span>
+      <span class="t" id="xifra-t"></span>
+    </div>
+  </div>
+</section>
+
+<section class="wrap products" aria-labelledby="prod-t">
+  <h2 id="prod-t" class="small-label" style="margin:0">Els productes de l'Observatori</h2>
+  <div class="grid4">
+    <a class="prod" href="https://estat-del-mon.onrender.com/"><span class="k">01 · Setmanal</span><span class="h">Estat del Món</span><span class="d">El butlletí de referència: un editorial i seccions temàtiques que sintetitzen el millor dels centres d'anàlisi internacionals.</span><span class="go">Edició de la setmana →</span></a>
+    <a class="prod" href="#monografics"><span class="k">02 · Monogràfics</span><span class="h">Edicions especials</span><span class="d">Dossiers en profunditat dedicats a un sol tema, quan una qüestió demana més espai que una secció setmanal.</span><span class="go">Veure les edicions →</span></a>
+    <a class="prod" href="https://conflictes.onrender.com/"><span class="k">03 · Mapa interactiu</span><span class="h">Atles de conflictes armats</span><span class="d">Tots els conflictes registrats per l'UCDP, amb una fitxa per a cadascun, i la violència política que documenta ACLED.</span><span class="go">Explorar el mapa →</span></a>
+    <a class="prod" href="https://estat-del-mon.onrender.com/eucografia/"><span class="k">04 · Trimestral</span><span class="h">EUcografia</span><span class="d">Radiografia de països europeus: en quina direcció es mou cadascun i amb quina intensitat, amb la taula de puntuació oberta.</span><span class="go">Darrera edició →</span></a>
+  </div>
+</section>
+
+<section id="butlleti" class="paper">
+  <div class="wrap bulletin">
+    <div class="row-head">
+      <div>
+        <p class="kicker" id="ed-kicker"></p>
+        <h2 class="h2" id="ed-title"></h2>
+        <p class="lede" id="ed-lede" style="font-size:17px"></p>
+      </div>
+      <a class="btn btn-dark" id="ed-link" href="https://estat-del-mon.onrender.com/#editorial">Llegir l'editorial</a>
+    </div>
+    <div class="tabs-wrap">
+      <div class="tabs" role="tablist" aria-label="Seccions de l'edició" id="tabs"></div>
+      <div class="panel" role="tabpanel" id="panel" aria-live="polite"></div>
+    </div>
+    <div class="archive" id="archive"><span class="lbl">Arxiu</span></div>
+  </div>
+</section>
+
+<section id="monografics" class="wrap mono-sec">
+  <div class="row-head">
+    <div>
+      <p class="kicker">Edicions monogràfiques</p>
+      <h2 class="h2">Un tema, totes les dades.</h2>
+    </div>
+    <p class="lede">Quan una qüestió demana més espai que una secció setmanal, l'Observatori hi dedica una edició sencera.</p>
+  </div>
+  <div class="mgrid" id="mgrid"></div>
+</section>
+
+<section id="atles" class="atlas">
+  <div class="wrap">
+    <div class="col">
+      <p class="kicker">Atles de conflictes armats</p>
+      <h2 class="h2">On es combat avui, i per què.</h2>
+      <p class="lede">Un mapa interactiu amb una fitxa per a cada conflicte: orígens, actors, víctimes i evolució. Dues categories, perquè no tota la violència és igual de mesurable.</p>
+      <div class="cats">
+        <div class="cat"><span class="h" style="color:var(--accent)"><svg width="10" height="10" aria-hidden="true"><circle cx="5" cy="5" r="5" fill="#FF7A3D"/></svg>Categoria A · UCDP</span><span class="d">Conflictes actius amb almenys 25 morts l'any, segons la Universitat d'Uppsala.</span></div>
+        <div class="cat"><span class="h" style="color:var(--soft)"><svg width="10" height="10" aria-hidden="true"><rect width="10" height="10" fill="#FFB38A"/></svg>Categoria B · ACLED</span><span class="d">Altres situacions de violència política, amb focus de les 12 darreres setmanes.</span></div>
+      </div>
+      <a class="btn btn-accent" style="align-self:flex-start" href="https://conflictes.onrender.com/">Obrir l'atles</a>
+    </div>
+    <div class="col" style="gap:28px">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <span class="small-label">Focus de l'edició d'aquesta setmana</span>
+        <div class="hot" id="hot"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <span class="small-label">Entrar per regió</span>
+        <div class="regions" id="regions"></div>
+      </div>
+      <span class="mono" style="font-size:12px;color:var(--dim)">Dades: UCDP (Universitat d'Uppsala), ACLED i OCHA · actualització mensual</span>
+    </div>
+  </div>
+</section>
+
+<section id="eucografia" class="wrap euco">
+  <div class="row-head">
+    <div>
+      <p class="kicker" id="eu-kicker"></p>
+      <h2 class="h2">Cap on es mou Europa, país per país.</h2>
+      <p class="lede" id="eu-lede"></p>
+    </div>
+    <div class="legend">
+      <span><span style="color:var(--blue)">↑</span> millora</span>
+      <span><span style="color:var(--down)">↓</span> empitjora</span>
+      <span><span style="color:var(--dim)">=</span> estable</span>
+      <span><span style="color:var(--mixed)">⇅</span> senyals oposats</span>
+    </div>
+  </div>
+  <div class="euco-body">
+    <div class="countries" id="countries"></div>
+    <div class="card-c" id="ccard" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="metode" class="paper">
+  <div class="wrap method">
+    <div style="display:flex;flex-direction:column;gap:12px;max-width:720px">
+      <p class="kicker">Mètode</p>
+      <h2 class="h2">Discrepar del judici sense haver de discrepar de les dades.</h2>
+    </div>
+    <div class="grid3">
+      <div><b>Fonts primàries</b><span>Eurostat, la Comissió Europea, l'FMI, l'OCDE, el BCE, l'AIE, l'UCDP i ACLED. Els centres d'anàlisi s'identifiquen sempre, amb la seva posició quan en tenen.</span></div>
+      <div><b>Metodologia publicada</b><span>Cada puntuació de l'EUcografia surt d'una regla fixa i es publica component per component, amb les condicions que farien canviar la fletxa.</span></div>
+      <div><b>En català, sense intermediaris</b><span>Anàlisi pròpia a partir dels documents originals, escrita en català per a lectors que volen entendre el món sense passar pel filtre d'altres capitals.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="subscripcio" class="wrap subs">
+  <div class="subs-box">
+    <div>
+      <h2 class="h2" style="font-size:clamp(28px,3.4vw,42px)">L'Estat del Món, cada setmana.</h2>
+      <p class="lede">I un avís quan surti una nova edició monogràfica o la propera EUcografia.</p>
+    </div>
+    <!-- TODO: connectar el formulari al servei de subscripció (action/method) -->
+    <form onsubmit="return false">
+      <label for="email">Adreça electrònica</label>
+      <div class="subs-row">
+        <input id="email" type="email" placeholder="nom@domini.cat" autocomplete="email" required>
+        <button type="submit">Subscriu-m'hi</button>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="about">
+      <b>Observatori Català de Geopolítica</b>
+      <span>Anàlisi de geopolítica, economia i política social a partir de dades oficials.</span>
+    </div>
+    <nav aria-label="Peu">
+      <div>
+        <span class="small-label" style="font-size:11px">Productes</span>
+        <a href="https://estat-del-mon.onrender.com/">Estat del Món</a>
+        <a href="#monografics">Monogràfics</a>
+        <a href="https://conflictes.onrender.com/">Atles de conflictes</a>
+        <a href="https://estat-del-mon.onrender.com/eucografia/">EUcografia</a>
+      </div>
+      <div>
+        <span class="small-label" style="font-size:11px">Observatori</span>
+        <a href="#metode">Mètode</a>
+        <a href="#subscripcio">Subscripció</a>
+        <a href="#inici">[Contacte]</a>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   CONTINGUT EDITABLE
+   Butlletí i EUcografia: actualitzeu aquests objectes amb cada edició.
+   Monogràfics: es llegeixen de monografics.json.
+   ============================================================ */
+const BASE = "https://estat-del-mon.onrender.com/";
+
+const EDICIO = {
+  data_text: "16 d'octubre de 2026",
+  xifra: { n: "509 milions de barrils", t: "Volum que falta als estocs mundials de petroli respecte de finals de febrer. Reserves terrestres en mínims almenys des del 2016. Font: AIE, octubre de 2026." },
+  editorial: {
+    titol: "Per poder resistir, el món es desgasta",
+    entradeta: "L'economia mundial ha aguantat la guerra amb l'Iran i el tancament parcial d'Ormuz consumint estocs, marges fiscals i paciència política acumulats. La resiliència no s'ha generat: s'ha gastat."
+  },
+  seccions: [
+    { area: "Economia global", titol: "La resiliència a crèdit", titular: "L'FMI constata que el món ha resistit la guerra buidant els seus amortidors", entradeta: "Creixement mundial del 3,1 % el 2026 i inflació cap al 4,7 %. L'activitat ha aguantat gràcies a estocs, desviaments de rutes i suport fiscal que ja s'han consumit: el pròxim xoc trobarà molt menys marge.", fonts: "FMI · Eurostat · CEPR · ifo · AIE · Bruegel" },
+    { area: "Rússia i Ucraïna", titol: "Gasoil per a les eleccions", titular: "Washington suspèn les sancions al gasoil rus: poc combustible i molta credibilitat perduda", entradeta: "En termes de mercat, l'acord amb Moscou és gairebé irrellevant. El cost real és polític: les sancions deixen de ser un capital compartit entre aliats a tres setmanes de les eleccions de mig mandat.", fonts: "Carnegie · Chatham House · IRIS · ECFR · Bertelsmann · SWP" },
+    { area: "Orient Mitjà i Banya d'Àfrica", titol: "Les dues ribes del mar Roig", titular: "Els houthis porten la guerra als aeroports saudites i Riad no té una sortida militar", entradeta: "Del Iemen a Etiòpia, Somàlia i el Sudan, les dues ribes del mar Roig s'han convertit en un sol escenari, on cada front alimenta els altres i les potències del Golf financen bàndols oposats.", fonts: "CSIS · Chatham House · Crisis Group · EISMENA · ARI" },
+    { area: "Seguretat i defensa", titol: "Arsenals poc profunds", titular: "La guerra amb l'Iran ha buidat els arsenals nord-americans i reposar-los costarà anys", entradeta: "El Pentàgon demana una inversió en munició vuit vegades superior a la mitjana de la dècada, però el coll d'ampolla és industrial. I les rutes marítimes europees es queden sense garant.", fonts: "CNAS · CSIS · SWP" },
+    { area: "Europa i la Xina", titol: "La reciprocitat que Pequín ja aplica", titular: "Europa negocia quotes d'híbrids mentre la Xina l'expulsa de les seves infraestructures crítiques", entradeta: "Brussel·les tanca entesos parcials sobre aranzels i terres rares, mentre Pequín substitueix sistemàticament la tecnologia europea amb un criteri de risc que Europa no s'aplica.", fonts: "Comissió Europea · ECFR · PIIE · Bruegel" },
+    { area: "Ordre internacional i democràcia", titol: "Les regles perden els seus garants", titular: "Els Estats Units sancionen la Cort Penal Internacional i posen a prova els estats que en formen part", entradeta: "La mateixa setmana que Washington relaxa les sancions a Moscou, les imposa a una institució judicial creada pels seus aliats. També: la governança voluntària de la IA i les eleccions al Brasil.", fonts: "Chatham House · CEPR · AISI · SWP · IISS" }
+  ],
+  arxiu: [["9 d'octubre","2026-10-09"],["2 d'octubre","2026-10-02"],["25 de setembre","2026-09-25"],["18 de setembre","2026-09-18"],["11 de setembre","2026-09-11"],["4 de setembre","2026-09-04"]],
+  focus: [
+    ["Iemen · Aràbia Saudita","atacs houthis contra aeroports i Aramco"],
+    ["Etiòpia · Eritrea","exèrcits a tocar de la frontera"],
+    ["Somàlia","combats a Mogadiscio i Baidoa"],
+    ["Sudan","una guerra que s'autofinança"],
+    ["Rússia · Ucraïna","atacs a la xarxa energètica"]
+  ]
+};
+
+const REGIONS = ["Món","Àfrica","Sahel i llac Txad","Banya d'Àfrica i Grans Llacs","Orient Mitjà","Europa","Àsia","Amèrica Llatina"];
+
+const EUCO = {
+  edicio: "Edició de tardor 2026",
+  finestra: "Les fletxes mesuren variació, no nivell. Finestra de mesura: gener–setembre de 2026. Propera edició, al desembre.",
+  paisos: [
+    { code:"DE", nom:"Alemanya", gov:"Govern Merz · federals el 2029", a:["↓","↓","↑","⇅"], s:["−1,20","−0,63","+1,67","−0,06"], nota:"L'AfD lidera les enquestes federals mentre Berlín fixa agenda a Europa: compromisos de defensa reals sobre una base política que s'erosiona.", ancora:"alemanya" },
+    { code:"BE", nom:"Bèlgica", gov:"Govern De Wever · federals el 2029", a:["=","↓","⇅","↓"], s:["−0,50","−0,75 / −2,00","+0,00","−0,62"], nota:"Doble rebaixa de qualificació i deute cap al 113 %, però una coalició que resisteix i una capacitat de bloqueig decisiva sobre els actius russos d'Euroclear.", ancora:"belgica" },
+    { code:"FR", nom:"França", gov:"Govern Lecornu · presidencials, abril 2027", a:["↓","↓","=","↓"], s:["−1,20","−1,08","−0,33","−0,87"], nota:"Pressupost sense majoria, dos trimestres de creixement zero i l'extrema dreta hegemònica en primera volta a sis mesos de les presidencials.", ancora:"franca" },
+    { code:"IT", nom:"Itàlia", gov:"Govern Meloni · legislatives el 2027", a:["↓","↑","=","⇅"], s:["−0,80","+0,80","+0,33","+0,11"], nota:"Les finances més ordenades en quinze anys i el diferencial a 87 punts bàsics, amb la coalició de dretes fracturada per l'escissió de Vannacci.", ancora:"italia" },
+    { code:"NL", nom:"Països Baixos", gov:"Govern Jetten en minoria", a:["↓","=","↑","⇅"], s:["−1,40","+0,29","+1,33","+0,07"], nota:"Deute al 45,6 % i atur al 3,9 %, governats pel primer gabinet minoritari sense pacte de suport des del 1918, que alhora fa el gir europeu més ambiciós en dècades.", ancora:"paisos-baixos" },
+    { code:"PL", nom:"Polònia", gov:"Cohabitació Tusk – Nawrocki · legislatives 2027", a:["↓","↓","=","↓"], s:["−1,00","+0,25 / −1,33","+0,00","−0,51"], nota:"Creixement del 3,5 % amb un dèficit del 7,1 % i una cohabitació que encadena vetos presidencials que les agències ja incorporen al preu.", ancora:"polonia" },
+    { code:"UK", nom:"Regne Unit", gov:"Govern Burnham · generals el 2029", a:["↑","=","=","="], s:["+0,80","+0,20 / −1,00","+0,33","+0,24"], nota:"Burnham retorna el laborisme al capdavant de les enquestes; el marge fiscal s'ha reduït a 8.000 milions de lliures abans del pressupost del 28 d'octubre.", ancora:"regne-unit" }
+  ]
+};
+
+/* ============================================================ */
+const $ = s => document.querySelector(s);
+const el = (tag, attrs = {}, kids = []) => {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "text") n.textContent = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+    else n.setAttribute(k, v);
+  }
+  [].concat(kids).forEach(c => c && n.append(c));
+  return n;
+};
+
+/* Xifra i editorial */
+$("#xifra-data").textContent = "La xifra de la setmana · " + EDICIO.data_text;
+$("#xifra-n").textContent = EDICIO.xifra.n;
+$("#xifra-t").textContent = EDICIO.xifra.t;
+$("#ed-kicker").textContent = "Estat del Món · " + EDICIO.data_text + " · Editorial";
+$("#ed-title").textContent = EDICIO.editorial.titol;
+$("#ed-lede").textContent = EDICIO.editorial.entradeta;
+
+/* Pestanyes del butlletí */
+const tabs = $("#tabs"), panel = $("#panel");
+function showSection(i) {
+  const s = EDICIO.seccions[i], num = String(i + 1).padStart(2, "0");
+  tabs.querySelectorAll(".tab").forEach((t, j) => { t.setAttribute("aria-selected", j === i); t.tabIndex = j === i ? 0 : -1; });
+  panel.replaceChildren(
+    el("span", { class: "k", text: num + " · " + s.area }),
+    el("span", { class: "s", text: s.titol }),
+    el("h3", { text: s.titular }),
+    el("p", { text: s.entradeta }),
+    el("div", { class: "foot" }, [el("span", { text: "Fonts: " + s.fonts }), el("a", { href: BASE + "#sec-s" + (i + 1), text: "Llegir la secció →" })])
+  );
+}
+EDICIO.seccions.forEach((s, i) => {
+  const b = el("button", { type: "button", role: "tab", class: "tab", onclick: () => showSection(i) }, [
+    el("span", { class: "n", text: String(i + 1).padStart(2, "0") }),
+    el("span", {}, [el("span", { class: "t", text: s.titol }), el("span", { class: "a", text: s.area })])
+  ]);
+  b.addEventListener("keydown", e => {
+    const n = EDICIO.seccions.length;
+    if (e.key === "ArrowDown" || e.key === "ArrowRight") { e.preventDefault(); showSection((i + 1) % n); tabs.children[(i + 1) % n].focus(); }
+    if (e.key === "ArrowUp" || e.key === "ArrowLeft") { e.preventDefault(); showSection((i - 1 + n) % n); tabs.children[(i - 1 + n) % n].focus(); }
+  });
+  tabs.append(b);
+});
+showSection(0);
+
+/* Arxiu */
+const archive = $("#archive");
+EDICIO.arxiu.forEach(([label, d]) => archive.append(el("a", { class: "chip", href: BASE + "setmanals/" + d, text: label })));
+archive.append(el("a", { class: "all", href: BASE, text: "Totes les edicions →" }));
+
+/* Atles */
+EDICIO.focus.forEach(([n, t]) => $("#hot").append(el("div", {}, [el("b", { text: n }), el("span", { text: t })])));
+REGIONS.forEach(r => $("#regions").append(el("a", { href: "https://conflictes.onrender.com/", text: r })));
+
+/* Monogràfics (de monografics.json, de més recent a més antic) */
+const mgrid = $("#mgrid");
+fetch("monografics.json")
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(({ edicions }) => {
+    edicions.slice().sort((a, b) => b.data.localeCompare(a.data)).forEach(m => {
+      const c = m.credit || {};
+      mgrid.append(el("article", { class: "mcard" }, [
+        el("a", { href: m.url }, [
+          el("img", { src: m.imatge, alt: m.alt || "", loading: "lazy", width: "960", height: "640" }),
+          el("div", { class: "body" }, [
+            el("div", { class: "meta" }, [el("span", { class: "date", text: m.data_text }), el("span", { class: "tag", text: m.etiqueta })]),
+            el("div", { class: "title" }, [el("span", { text: m.titol }), el("i", { "aria-hidden": "true", text: "→" })])
+          ])
+        ]),
+        c.autor ? el("div", { class: "credit" }, [
+          "Foto: ", el("a", { href: c.font_url, text: c.autor }), " · ",
+          el("a", { href: c.llicencia_url, rel: "license", text: c.llicencia }), " · Wikimedia Commons"
+        ]) : null
+      ]));
+    });
+  })
+  .catch(() => mgrid.append(el("p", { class: "notice", text: "No s'han pogut carregar les edicions monogràfiques. Si obriu la pàgina directament des del disc, el navegador bloqueja la lectura de monografics.json: feu servir un servidor local o la versió publicada." })));
+
+/* EUcografia */
+$("#eu-kicker").textContent = "EUcografia · " + EUCO.edicio;
+$("#eu-lede").textContent = EUCO.finestra;
+const COL = { "↑": "var(--blue)", "↓": "var(--down)", "=": "var(--dim)", "⇅": "var(--mixed)" };
+const LBL = ["Política", "Economia", "Posició europea", "Síntesi"];
+const countries = $("#countries"), ccard = $("#ccard");
+function showCountry(code) {
+  const p = EUCO.paisos.find(x => x.code === code);
+  countries.querySelectorAll(".ctry").forEach(b => b.setAttribute("aria-pressed", b.dataset.code === code));
+  ccard.replaceChildren(
+    el("div", { class: "hd" }, [el("h3", { text: p.nom }), el("span", { class: "gov", text: p.gov })]),
+    el("div", { class: "dims" }, LBL.map((l, i) => {
+      const a = el("span", { class: "a", text: p.a[i] }); a.style.color = COL[p.a[i]];
+      return el("div", { class: "dim" }, [el("span", { class: "l", text: l }), a, el("span", { class: "s", text: p.s[i] })]);
+    })),
+    el("p", { text: p.nota }),
+    el("div", { class: "foot" }, [el("span", { text: "Escala −2 a +2 per component · llindar de l'«=»: ±0,5" }), el("a", { href: BASE + "eucografia/#" + p.ancora, text: "Fitxa completa i taula de puntuació →" })])
+  );
+}
+EUCO.paisos.forEach(p => {
+  const ar = el("span", { class: "ar", "aria-label": "Síntesi", text: p.a[3] }); ar.style.color = COL[p.a[3]];
+  countries.append(el("button", { type: "button", class: "ctry", "data-code": p.code, "aria-pressed": "false", onclick: () => showCountry(p.code) }, [
+    el("span", {}, [el("small", { text: p.code }), el("b", { text: p.nom })]), ar
+  ]));
+});
+showCountry(EUCO.paisos[0].code);
+</script>
+</body>
+</html>
